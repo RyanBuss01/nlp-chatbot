@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chatroom</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="chat-container"></div>
+
+    <div class="input-container">
+        <input type="text" id="message-input" placeholder="Type your message">
+        <input type="submit" value="Send" onclick="sendMessage()">
+    </div>
+
+    <script>
+        window.serverPath = "http://localhost:3000";
+    </script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="../scripts/indexScript.js"></script>
+    
+</body>
+</html>

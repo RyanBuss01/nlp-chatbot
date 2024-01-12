@@ -1,0 +1,22 @@
+{
+  "name": "nlp-chatbot",
+  "version": "1.0.0",
+  "description": "Machine Learning chatbot using NLP",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js",
+    "pro": "node index.js",
+    "convert": "python python/jsonConverter.py",
+    "train": "python python/train.py"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "child_process": "^1.0.2",
+    "express": "^4.18.2",
+    "http": "^0.0.1-security",
+    "path": "^0.12.7",
+    "socket.io": "^4.7.3"
+  }
+}
