@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon index.js",
     "pro": "node index.js",
-    "convert": "python python/jsonConverter.py",
-    "train": "python python/train.py"
+    "convert": "python3 python/jsonConverter.py",
+    "train": "python3 python/train.py"
   },
   "author": "",
   "license": "ISC",

@@ -6,13 +6,14 @@ from model import NeuralNet
 from nltk_util import bag_of_words, tokenize
 
 input = sys.argv[1]
+botName = sys.argv[2]
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-with open('data/intents.json', 'r') as json_data:
+with open(f'data/json/intents_{botName}.json', 'r') as json_data:
     intents = json.load(json_data)
 
-FILE = "data/model.pth"
+FILE = f"data/models/model_{botName}.pth"
 data = torch.load(FILE)
 
 input_size = data["input_size"]
@@ -26,7 +27,6 @@ model = NeuralNet(input_size, hidden_size, output_size).to(device)
 model.load_state_dict(model_state)
 model.eval()
 
-bot_name = "Sam"
 sentence = input
 
 sentence = tokenize(sentence)
