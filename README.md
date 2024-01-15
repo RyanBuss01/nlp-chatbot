@@ -2,7 +2,7 @@
 Machine Learning chatbot using NLP
 
 
-![Chat](public/chatting.png)
+![Chat](public/res/chatting.png)
 
 
 
