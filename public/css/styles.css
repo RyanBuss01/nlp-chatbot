@@ -2,19 +2,43 @@ body {
     background-color: #121212;
     color: #ffffff;
     font-family: Arial, sans-serif;
+    
+}
+
+h1 {
+    text-align: center;
 }
 
 .chat-container {
     display: flex;
     flex-direction: column;
     height: 400px;
+    width: 400px;
     overflow-y: scroll;
+    align-self: center;
+
+}
+
+.center-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
 }
 
 .message {
     display: flex;
-    align-items: center;
     margin-bottom: 10px;
+}
+
+.my-message {
+    justify-content: flex-end;
+}
+
+.other-message {
+    justify-content: flex-start;
 }
 
 .message-inner {
@@ -27,6 +51,12 @@ body {
 }
 
 
+.content {
+    background-color: #1e90ff;
+    color: #ffffff;
+    padding: 8px;
+    border-radius: 5px;
+}
 
 .message .content {
     background-color: #1e90ff;
@@ -40,8 +70,10 @@ body {
 }
 
 .input-container {
+    width: 400px;
     display: flex;
     margin-top: 20px;
+    
 }
 
 .input-container input[type="text"] {
@@ -93,4 +125,5 @@ body {
     flex-direction: column;
     align-items: center;
     margin-right: 10px;
+    margin-left: 10px;
 }

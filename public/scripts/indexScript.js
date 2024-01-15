@@ -9,17 +9,18 @@ function sendMessage() {
     if (message !== '') {
         var chatContainer = document.querySelector('.chat-container');
         var messageElement = document.createElement('div');
-        messageElement.classList.add('message');
+        messageElement.classList.add('message', 'my-message');
         messageElement.innerHTML = `
         <div class="message-inner">
-            <div class="bot-info">
-                <img src="../res/person_icon.png" alt="Bot Image" class="bot-image">
-                <span class="user">You:</span>
-            </div>
             <div class="message-text">
                 <span class="content">${message}</span>
             </div>
+            <div class="bot-info">
+                <img src="../res/person_icon.png" alt="Bot Image" class="bot-image">
+                <span class="user">You</span>
+            </div>
         </div>`;
+        chatContainer.appendChild(messageElement);
         chatContainer.appendChild(messageElement);
         var data = {
             message: message,
@@ -37,18 +38,18 @@ socket.on('newMessage', function (data) {
     var chatContainer = document.querySelector('.chat-container');
     var messageElement = document.createElement('div');
     messageElement.classList.add('message', 'other-message');
-    messageElement.innerHTML = `
-    <div class="message-inner">
-        <div class="bot-info">
-            <img src="../res/robo_icon.png" alt="Bot Image" class="bot-image">
-            <span class="user">Bot:</span>
-        </div>
-        <div class="message-text">
-            <span class="content">${message}</span>
-        </div>
+    messageElement.innerHTML = `<div class="message-inner">
+    <div class="bot-info">
+        <img src="../res/robo_icon.png" alt="Bot Image" class="bot-image">
+        <span class="user">Bot</span>
     </div>
-    `;
+    <div class="message-text">
+        <span class="content">${message}</span>
+    </div>
+</div>`;
     chatContainer.appendChild(messageElement);
+    chatContainer.appendChild(messageElement);
+    ``
 })
 
 function handleKeyPress(event) {

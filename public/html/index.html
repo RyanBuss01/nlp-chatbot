@@ -13,11 +13,15 @@
         <!-- <option value="caring">caring-bot</option> -->
         <!-- <option value="witty">witty-bot</option> -->
     <!-- </select> -->
-    <div id="chat-container" class="chat-container"></div>
+    <div class="center-container">
+        <div id="chat-container" class="chat-container"></div>
+    </div>
 
-    <div class="input-container">
-        <input type="text" id="message-input" placeholder="Type your message" onkeydown="handleKeyPress(event)">
-        <input type="submit" value="Send" onclick="sendMessage()">
+    <div class="center-container">
+        <div class="input-container">
+            <input type="text" id="message-input" placeholder="Type your message" onkeydown="handleKeyPress(event)">
+            <input type="submit" value="Send" onclick="sendMessage()">
+        </div>
     </div>
 
     <script>

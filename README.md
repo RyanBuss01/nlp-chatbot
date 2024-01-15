@@ -1,6 +1,11 @@
 # nlp-chatbot
 Machine Learning chatbot using NLP
 
+
+![Alt text](res/chatting.png)
+
+
+
 ## Set-up
 
 python plugins
