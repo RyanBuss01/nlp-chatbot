@@ -2,8 +2,7 @@
 Machine Learning chatbot using NLP
 
 
-![Chat](public/res/chatting.png)
-
+<img src="public/res/chatting.png" alt="Chat" width="300"/>
 
 
 ## Set-up
