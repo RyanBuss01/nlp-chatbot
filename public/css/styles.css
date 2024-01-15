@@ -13,15 +13,20 @@ body {
 
 .message {
     display: flex;
-    justify-content: flex-start;
     align-items: center;
     margin-bottom: 10px;
+}
+
+.message-inner {
+    display: flex;
 }
 
 .message .user {
     font-weight: bold;
     margin-right: 10px;
 }
+
+
 
 .message .content {
     background-color: #1e90ff;
@@ -53,4 +58,39 @@ body {
     border-radius: 5px;
     margin-left: 10px;
     cursor: pointer;
+}
+
+.message-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.message-text {
+    display: flex;
+    align-items: center;
+}
+
+.bot-image {
+    width: 40px;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom:
+    10px; /* Adjust as needed */
+}
+
+
+.bot-image-container, .text-container {
+    display: block;
+}
+
+.message-text-container {
+    display: block;
+}
+
+.bot-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 10px;
 }

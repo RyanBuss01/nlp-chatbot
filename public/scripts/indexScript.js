@@ -1,6 +1,6 @@
 const socket = io("http://localhost:3000");
 const selection = document.getElementById('bot-select');
-var botName = selection.value;
+var botName = 'enthusiastic';
 
 function sendMessage() {
     var messageInput = document.getElementById('message-input');
@@ -10,7 +10,16 @@ function sendMessage() {
         var chatContainer = document.querySelector('.chat-container');
         var messageElement = document.createElement('div');
         messageElement.classList.add('message');
-        messageElement.innerHTML = '<span class="user">You:</span><span class="content">' + message + '</span>';
+        messageElement.innerHTML = `
+        <div class="message-inner">
+            <div class="bot-info">
+                <img src="../res/person_icon.png" alt="Bot Image" class="bot-image">
+                <span class="user">You:</span>
+            </div>
+            <div class="message-text">
+                <span class="content">${message}</span>
+            </div>
+        </div>`;
         chatContainer.appendChild(messageElement);
         var data = {
             message: message,
@@ -21,15 +30,6 @@ function sendMessage() {
     }
 }
 
-// Unused function to add chatroom messages on the other side
-function addChatroomMessage(message) {
-    var chatContainer = document.querySelector('.chat-container');
-    var messageElement = document.createElement('div');
-    messageElement.classList.add('message', 'other-message');
-    messageElement.innerHTML = '<span class="user">Chatroom:</span><span class="content">' + message + '</span>';
-    chatContainer.appendChild(messageElement);
-}
-
 socket.on('newMessage', function (data) {
     const textDecoder = new TextDecoder();
     const message = textDecoder.decode(new Uint8Array(data));
@@ -37,7 +37,17 @@ socket.on('newMessage', function (data) {
     var chatContainer = document.querySelector('.chat-container');
     var messageElement = document.createElement('div');
     messageElement.classList.add('message', 'other-message');
-    messageElement.innerHTML = `<span class="user">${botName=='friend'? "friendly" : botName}-Bot:</span><span class="content">` + message + `</span>`;
+    messageElement.innerHTML = `
+    <div class="message-inner">
+        <div class="bot-info">
+            <img src="../res/robo_icon.png" alt="Bot Image" class="bot-image">
+            <span class="user">Bot:</span>
+        </div>
+        <div class="message-text">
+            <span class="content">${message}</span>
+        </div>
+    </div>
+    `;
     chatContainer.appendChild(messageElement);
 })
 
